@@ -1,0 +1,56 @@
+@import "./variables.scss";
+
+.toolbar{
+    height: $toolbar-height;
+    background-color: rgb(250, 249, 249);
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    box-shadow: 10px 4px 15px 5px rgba(99, 99, 99, 0.2);
+    border-radius: 10px;
+    &__btn{
+        height: 45px;
+        width: 45px;
+        border:none;
+        border-radius: 5px;
+        outline:none;
+        cursor: pointer;
+        margin-left: 10px;
+    }
+    .brush {
+        background: url('../assets/img/paintbrush_83820.svg') no-repeat center;
+        background-size: 90%;
+    }
+    .rect{
+        background: url('../assets/img/blacksquare_83753.svg') no-repeat center;
+        background-size: 90%;
+    }
+    .circle{
+        background: url('../assets/img/perfect-circle_icon-icons.com_53928.svg') no-repeat center;
+        background-size: 90%;
+    }
+    .eraser{
+        background: url('../assets/img/eraser_icon_173850.svg') no-repeat center;
+        background-size: 90%;
+    }
+    .line{
+        background: url('../assets/img/straight-horizontal-line_icon-icons.com_74237.svg') no-repeat center;
+        background-size: 90%;
+    }
+    .undo{
+        background: url('../assets/img/undomono_105882.svg') no-repeat center;
+        background-size: 90%;
+        margin-left: auto;
+    }
+    .redo{
+        background: url('../assets/img/undomono_105882.svg') no-repeat center;
+        background-size: 90%;
+        transform: scaleX(-1);
+    }
+    .save{
+        background: url('../assets/img/save_78935.svg') no-repeat center;
+        background-size: 90%;
+        margin-right: 10px;
+    }
+}
