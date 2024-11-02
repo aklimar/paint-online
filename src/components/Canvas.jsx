@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import '../styles/canvas.scss';
 import {observer} from "mobx-react-lite";
 import CanvasState from '../store/CanvasState';
-
+import ToolState from './../store/ToolState'
 import Brush from './../tools/Brush';
 
 const Canvas = observer(
@@ -12,11 +12,20 @@ const Canvas = observer(
 
     useEffect(() => {
         CanvasState.setCanvas(canvasRef.current)
+        ToolState.setTool(new Brush(canvasRef.current))
     }, [])
   
+    const mouseDownHandler=()=>{
+      CanvasState.pushToUndo(canvasRef.current.toDataURL())
+    }
+
     return (
       <div className="canvas">
-        <canvas ref={canvasRef} width={1000} height={600} />
+        <canvas 
+        onMouseDown={()=>mouseDownHandler()}
+        ref={canvasRef} 
+        width={1200} 
+        height={800} />
       </div>
     );
   }
