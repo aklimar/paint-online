@@ -6,9 +6,14 @@ export default class Line extends Tool{
         this.listen()
     }
 
-    listen(){
-        this.canvas.onmousemove=this.mouseMoveHandler.bind(this)
-        this.canvas.onmousedown=this.mouseDownHandler.bind(this)
+    listen() {
+        this.canvas.onmousedown = this.mouseDownHandler.bind(this)
+        this.canvas.onmouseup = this.mouseUpHandler.bind(this)
+        this.canvas.onmousemove = this.mouseMoveHandler.bind(this)
+    }
+    
+    mouseUpHandler(e) {
+        this.mouseDown = false
     }
     
     mouseDownHandler(e) {

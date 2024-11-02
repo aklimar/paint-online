@@ -4,6 +4,7 @@
     height: $toolbar-height;
     background-color: rgb(250, 249, 249);
     display: flex;
+    flex-direction: column;
     align-items: center;
     position: absolute;
     width:12%;

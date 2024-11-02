@@ -1,26 +1,24 @@
 export default class Tool {
     constructor(canvas) {
-        this.canvas = canvas;
-        this.ctx = canvas.getContext('2d');
-        this.mouseDown = false;
-        this.initEvents();
-    }
-    initEvents() {
-        this.canvas.onmouseleave = this.handleMouseLeave.bind(this);
-        this.canvas.onmouseup = this.handleMouseUp.bind(this);
+        this.canvas = canvas
+        this.ctx = canvas.getContext('2d')
+        this.destroyEvents()
     }
 
-    handleMouseLeave() {
-        this.mouseDown = false;
+    set fillColor(color) {
+        this.ctx.fillStyle = color
+    }
+    set strokeColor(color) {
+        this.ctx.strokeStyle = color
     }
 
-    handleMouseUp() {
-        this.mouseDown = false;
+    set lineWidth(width) {
+        this.ctx.lineWidth = width
     }
-    destroyEvents(){
-        this.canvas.onmousemove=null
-        this.canvas.onmousedown=null
-        this.canvas.onmouseup=null
-        this.canvas.onmouseleave = null;
+
+    destroyEvents() {
+        this.canvas.onmousemove = null
+        this.canvas.onmousedown = null
+        this.canvas.onmouseup = null
     }
 }
